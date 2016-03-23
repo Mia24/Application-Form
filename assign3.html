@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+   <meta charset="UTF-8" />
+   <title>Sign Up</title>
+   <link rel='stylesheet' href="a3.css" type='text/css' media='screen'>
+   <script src='a3.js'></script>
+   <script type="text/javascript" src='top-level-domain-names.js'> </script>
+      
+			  
+</head>
+<body onload="aboutCountries()">
+  <form name="form1" id="formid" action="https://formpost.azurewebsites.net/home/test" method="post" onsubmit='return formValidationExample();' autocomplete="on">
+	
+       <section class="header">
+		<h1>JobSearch.com</h1>
+	   </section>
+		
+	   <section class="margin">
+	   <section class="head2">
+		<h2>Create Your Account</h2>
+	   </section>
+	   
+	   <section class="head3">
+		<h3>*Required information</h3>
+	   </section>
+	   
+	   <div>
+	   <p>Basic Information</p>
+				<label class="label" for="email" title="Free format">Email <span>*</span></label>
+				<input class="input" type="email" name="email" id="email" required="required" autofocus onchange='vEmail();'/><br>
+				<div class="error" id="eremail"></div><br />
+				
+				<label class="label" for="password" >Password<span>*</span></label>				
+				<input class="input" type="password" name="password" id="password" required="required" onchange='vPasswd();'/><br>
+				<div class="error" id="erpass"></div><br />
+				
+				<label class="label" for="retypepassword" title="Name must have contain both upper and lower case characters">Retype Password<span>*</span></label>				
+				<input class="input" type="password" name="retypepassword" id="retypepassword" required="required" onchange='vrPasswd();'/><br>
+				<div class="error" id="errepass"></div><br />
+				
+				<label class="label" for="fname" title="Free format">First Name<span>*</span></label>				
+				<input class="input" type="text" name="fname" id="fname" required="required" onchange='vFname();' /><br>
+				<div class="error" id="erfname"></div><br />
+				
+				<label class="label" for="lname" title="Free format">Last Name<span>*</span></label>				
+				<input class="input" type="text" name="lname" id="lname" required="required" onchange='vLname();'/><br>
+				<div class="error" id="erlname"></div><br />
+				
+				<label class="label" for="phone" title="name must be number only">Phone Number<span>*</span></label>				
+				<input class="input" type="tel" name="phone" id="phone" required="required" placeholder="999-999-9999" onchange='vPhone();'/><br>
+				<div class="error" id="erphone"></div><br />
+				
+				<label class="label" for="address" title="Free format">Address<span>*</span></label>				
+				<input class="input" type="text" name="address" id="address" required="required" /><br>
+			
+				
+				<label class="label" for="city" title="Free format">City<span>*</span></label>				
+				<input class="input" type="text" name="city" id="city" required="required" /><br>
+				
+				<label class="label" for="province" title="Free format">Province<span>*</span></label>				
+				<input class="input" type="text" list="pt" name="province" id="province" required="required" /><br>
+				<datalist id="pt">
+					<option value="AB">Alberta</option>
+					<option value="BC">British Columbia</option>
+					<option value="MB">Manitoba</option>
+					<option value="NB">New Brunswick</option>
+					<option value="NL">Newfoundland and Labrador</option>
+					<option value="NS">Nova Scotia</option>
+					<option value="ON">Ontario</option>
+					<option value="PE">Prince Edward Island</option>
+					<option value="QC">Quebec</option>
+					<option value="SK">Saskatchewan</option>
+					<option value="NT">Northwest Territories</option>
+					<option value="NU">Nunavut</option>
+					<option value="YT">Yukon</option>
+				</datalist>
+					
+								
+				<label class="label" for="country">Country<span>*</span></label>				
+				<select class="cou" name="country" id="country" >
+				</select>
+				<div class="error" id="ercountry"></div><br />
+		</div>	
+				<br>
+		<div>
+				<p>Education</p>
+				 <label class="label" for="school" title="Free format">School<span>*</span></label>				
+				<input class="input" type="text" name="school" id="school" required="required" /><br>
+				
+				<label class="label" for="program" title="Free format">Program<span>*</span></label>				
+				<input class="input" type="text" name="program" id="program" required="required" /><br>
+				
+				<label class="label" for="educationlevel" title="Free format">Education Level<span>*</span></label>				
+				<select name="educationlevel" id="educationlevel" size=1  >
+					<option value="0" selected>&dash;select&dash;</option>
+					<option value="1">Technical Diploma</option>
+					<option value="2">College Diploma</option>
+					<option value="3">Bachelor's Degree</option>	
+					<option value="4">Master's Degree</option>
+					<option value="5">Others</option>
+				</select><br>
+			
+				
+				<section id="rad1">
+				<fieldset class="smf" id="rad2" style="height:80px">
+				<legend>Education Status <span id="ast2">*</span> </legend>
+				<input type="radio" name="radio" id="idradio1" value="1" onchange='vRadio();' /><label  for="idradio1">Graduated</label><br />
+				<input type="radio" name="radio" id="idradio2" value="2" onchange='vRadio();' /><label  for="idradio2">Currently enrolled</label><br />
+				<input type="radio" name="radio" id="idradio3" value="3" onchange='vRadio();' /><label  for="idradio3">Did not graduate</label><br />
+				</fieldset>
+				<div class="error" id="erradio"></div><br />
+				</section>
+				
+				
+			   
+			   
+				<label class="label" for="graduationdate" title="Free format">Graduation Date</label>				
+				<input class="input" type="date" name="graduationdate" id="graduationdate" /><br><br><br>
+				
+				</div>  
+				
+				<br>
+				
+				<div>
+				<p>Work Experience <button type="button" id="workexp" onclick="bonuswork();">+</button></p>
+				<section id="workexp2">
+				<label class="label" for="employer" title="Free format">Employer:</label>				
+				<input class="input" type="text" name="employer" id="employer" /><br>
+				<div class="error" id="eremployer"></div><br />
+				
+				<label class="label" for="jobtitle" title="Free format">Job Title:</label>				
+				<input class="input" type="text" name="jobtitle" id="jobtitle" /><br>
+				<div class="error" id="erjobtitle"></div><br />
+				
+				<div class="top">
+				<label class="label" for="jobduty" title="Free format">Job Duty:</label>
+				<textarea  name="jobduty" id="jobduty" cols="20" rows="10" ></textarea><br>
+				<div class="error" id="ertextarea"></div><br />
+				</div>
+				
+				<label class="label" for="workyear" title="Free format">Worked Year:</label>				
+				<input class="input" type="number" name="workyear" id="workyear" min="1" max="20"/><br>
+				<div class="error" id="erworked"></div><br /><br><br>
+				</section>
+				</div>
+				<br>
+				
+				<div>
+				 <p>Attachments</p>
+				 <label class="label" for="attachments" title="Free format">Attachments:</label>
+				 <input class="input" type="file" name="attachments" id="attachments" multiple><br><br>
+				</div>
+	
+				
+				<section>
+				<input style="border:1px solid grey;border-radius:5px; background-color:red; width:60px; color:white;font-weight:bold;margin:1em 0 0 24em" type='reset' name="entry19" id="entry19" value='Reset'>&nbsp;&nbsp;
+				<input style="border:1px solid grey;border-radius:5px; background-color:red; width:60px; color:white;font-weight:bold;margin-top:1em" type='submit'  name="entry20" id="entry20" value='Apply'>
+				</section>
+				<br>
+				
+	
+	</section>
+			<div class="error" id="errors"></div><br />
+	
+  <div style="text-align:center; font: 1em sans-serif">
+	<script type="text/javascript">
+	//<![CDATA[
+	var dt=new Date(document.lastModified); // Get document last modified date
+	document.write('This page was last updated on '+dt.toLocaleString())
+	//]]>
+	</script>
+	</div>
+	<br><br>
+	</form>
+
+</body>
+
+</html>
